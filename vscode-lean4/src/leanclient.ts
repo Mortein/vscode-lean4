@@ -340,7 +340,7 @@ export class LeanClient implements Disposable {
         // Reveal the standard error output channel when the server prints something to stderr.
         // The vscode-languageclient library already takes care of writing it to the output channel.
         (this.client as any)._serverProcess.stderr.on('data', () => {
-            this.client?.outputChannel.show(true);
+            this.client?.outputChannel.show(false);
         });
 
         this.restartedEmitter.fire(undefined)
